@@ -1,30 +1,32 @@
-const header = () => {
-  const links = [
-    {
-      title: "Home",
-    },
-    {
-      title: "About",
-    },
-  ];
+import React from "react";
 
-  let linkElements = links.map(function (link, index) {
-    return (
-      <li className="mx-4" key={index}>
-        {link.title}
-      </li>
-    );
-  });
+const links = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About",
+    link: "/about",
+  },
+];
 
+const linkElements = links.map((link, index) => (
+  <li className="mx-4" key={index}>
+    <a href={link.link} className="text-white font-bold">
+      {link.title}
+    </a>
+  </li>
+));
+
+const Header = () => {
   return (
-    <>
-      <div className="border border-indigo-600 w-full h-10">
-        <div className="flex justify-center items-center h-full list-none">
-          {linkElements}
-        </div>
+    <div className=" w-full h-10 ">
+      <div className="flex justify-center items-center h-full list-none bg-red-500 ">
+        {linkElements}
       </div>
-    </>
+    </div>
   );
 };
 
-export default header;
+export default Header;
