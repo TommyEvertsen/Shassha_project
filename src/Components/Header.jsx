@@ -6,7 +6,7 @@ const links = [
     link: "/",
   },
   {
-    title: "About",
+    title: "Play",
     link: "/about",
   },
 ];
